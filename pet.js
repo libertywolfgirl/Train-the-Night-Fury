@@ -7,5 +7,6 @@ const petButton = document.querySelector ("button")
 console.log(petButton)
 // Const refers to a variable 
 const divstatus = document.querySelector ("#status")
+console.log(divstatus)
+const image = document.querySelector ("")
 
-const log = ("divstatus")
