@@ -9,10 +9,9 @@ console.log(petButton)
 petButton.addEventListener ('click' , (e) => {
   console.log("Button pressed!")
   count +=1 
-})
-const 
-
-
+}) 
+console.log (`You pet the bunny $ {count} times`)
+//const 
 console.log(petButton)
 // Const refers to a variable 
 const divstatus = document.querySelector ("#status")
