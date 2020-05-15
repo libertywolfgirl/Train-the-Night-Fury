@@ -9,11 +9,11 @@ let count = 0;
 
 // create function to change image
 function changeImage() {
-  let image = document.getElementById('image-container');
+  let image = document.getElementById("nightFury");
   if (count > 15) {
-    image.src = grumpyBun.jpg
+    image.src = "img/grumpyBun.jpg";
   } else {
-    image.src = happyBun.jpg
+    image.src = "img/happyBun.jpg";
   }
 }
 
@@ -22,7 +22,7 @@ petButton.addEventListener("click", e => {
   console.log("Button pressed!");
   count += 1;
   console.log(`You pet the Night Fury ${count} times`);
-  
+
   // check if too many pets
   changeImage();
 });
