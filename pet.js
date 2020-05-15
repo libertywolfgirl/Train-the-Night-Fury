@@ -7,6 +7,16 @@ console.log(petButton);
 // initializa a variable called count
 let count = 0;
 
+// create function to change image
+function changeImage() {
+  let image = document.getElementById('image-container');
+  if (count > 15) {
+    image.src = grumpyBun.jpg
+  } else {
+    image.src = happyBun.jpg
+  }
+}
+
 // print out the element that we've selected
 petButton.addEventListener("click", e => {
   console.log("Button pressed!");
@@ -14,8 +24,7 @@ petButton.addEventListener("click", e => {
   console.log(`You pet the Night Fury ${count} times`);
   
   // check if too many pets
-  if(count > 15)
-    document.getElementByID('')
+  changeImage();
 });
 
 const divstatus = document.querySelector("#status");
