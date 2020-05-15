@@ -2,6 +2,7 @@ console.log("pet script running");
 // variables
 let petCount;
 let gamePlaying;
+const image = document.getElementById("nightFury");
 const petButton = document.querySelector("button");
 
 // initialize game
@@ -22,7 +23,6 @@ petButton.addEventListener("click", e => {
 
 // create function to end the game
 function endGame() {
-  let image = document.getElementById("nightFury");
   if (petCount > 15) {
     image.src = "img/grumpyBun.jpg";
     document.querySelector("#status").textContent = "You failed!";
