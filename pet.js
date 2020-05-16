@@ -11,40 +11,44 @@ const petButton = document.querySelector("button");
 init();
 
 // When each button is clicked, it will "call" function for that button (functions are below)
-  $('.feed-button').click(clickedFeedButton);
-  $('.play-button').click(clickedPlayButton);
-  $('.pet-button').click(clickedPetButton);
-  $('.train-button').click(clickedTrainButton);
+  document.querySelector('.feed-button').click(clickedFeedButton);
+  document.querySelector('.play-button').click(clickedPlayButton);
+  document.querySelector('.pet-button').click(clickedPetButton);
+  document.querySelector('.train-button').click(clickedTrainButton);
 
   function clickedFeedButton() {
     // Increase pet happiness
     happiness += 1;
+    console.log(happiness);
     // Increase pet weight
     weight += 1;
+    console.log(weight);
     checkAndUpdatePetInfoInHtml();
   }
   
   function clickedPlayButton() {
     // Increase pet happiness
     happiness += 1;
+    console.log(happiness);
     // Decrease pet weight
     weight -= 1;
+    console.log(weight);
     checkAndUpdatePetInfoInHtml();
   }
   
   function clickedPetButton() {
-    // Decrease pet happiness
-    pet_info.happiness -= 1;
-    // Decrease pet weight
-    pet_info.weight -= 1;
+    // Increase pet happiness
+    happiness += 1;
+    // Increase pet count
+    petCount +=1;
+    console.log(petCount);
     checkAndUpdatePetInfoInHtml();
   }
 
   function clickedTrainButton() {
     // Decrease pet happiness
-    pet_info.happiness -= 1;
-    // Decrease pet weight
-    pet_info.weight -= 1;
+    happiness -= 1;
+    console.log(happiness);
     checkAndUpdatePetInfoInHtml();
   }
 
@@ -60,7 +64,7 @@ init();
   }
 
 // play the game
-petButton.addEventListener("click", e => {
+/*petButton.addEventListener("click", e => {
   if (gamePlaying) {
     // print out the element that we've selected
     console.log("Button pressed!");
@@ -81,10 +85,12 @@ function endGame() {
   } else {
     image.src = "img/happyBun.jpg";
   }
-}
+}*/
 
 // function to initialize game
 function init() {
   petCount = 0;
+  happiness = 0;
+  weight = 10;
   gamePlaying = true;
 }
