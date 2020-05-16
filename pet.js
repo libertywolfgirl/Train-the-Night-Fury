@@ -20,8 +20,8 @@ document
   .querySelector(".pet-button")
   .addEventListener("click", clickedPetButton);
 document
-  .querySelector(".train-button")
-  .addEventListener("click", clickedTrainButton);
+  .querySelector(".fly-button")
+  .addEventListener("click", clickedFlyButton);
 
 function clickedFeedButton() {
   if (gamePlaying) {
@@ -39,7 +39,7 @@ function clickedFeedButton() {
 function clickedPlayButton() {
   if (gamePlaying) {
     // Increase pet happiness
-    happiness += 1;
+    happiness += 3;
     console.log(happiness);
     // Decrease pet weight
     weight -= 1;
@@ -52,7 +52,7 @@ function clickedPlayButton() {
 function clickedPetButton() {
   if (gamePlaying) {
     // Increase pet happiness
-    happiness += 1;
+    happiness += 2;
     console.log(happiness);
     // Increase pet count
     petCount += 1;
@@ -62,7 +62,7 @@ function clickedPetButton() {
   }
 }
 
-function clickedTrainButton() {
+function clickedFlyButton() {
   if (gamePlaying) {
     // Decrease pet happiness
     happiness -= 1;
@@ -72,21 +72,36 @@ function clickedTrainButton() {
   }
 }
 
-// create function to end the game
+// function to end the game
 function endGame() {
-  if (petCount > 15 || happiness < 5 || weight < 5 || weight > 20) {
-    image.src = "img/angrytoothless.jpg";
-    document.querySelector("#status").textContent = "You failed!";
-    gamePlaying = false;
+  if (petCount > 15 || happiness < 0 || weight < 0 || weight > 20) {
+    loseGame();
+  } else if (happiness > 50) {
+    winGame();
   } else {
     image.src = "img/traintoothless.jpg";
   }
 }
 
+// function to lose game
+function loseGame() {
+  image.src = "img/angrytoothless.jpg";
+  document.querySelector("#status").textContent = "Sorry, you failed to train the Night Fury!";
+  gamePlaying = false;
+}
+
+// function to win game
+function winGame() {
+  image.src = "img/happytoothless.jpg";
+  document.querySelector("#status").textContent =
+    "Congratulations! You successfully trained the Night Fury!";
+  gamePlaying = false;
+}
+
 // function to initialize game
 function init() {
   petCount = 0;
-  happiness = 10;
-  weight = 10;
+  happiness = 0;
+  weight = 0;
   gamePlaying = true;
 }
