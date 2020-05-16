@@ -79,7 +79,7 @@ function endGame() {
     document.querySelector("#status").textContent = "You failed!";
     gamePlaying = false;
   } else {
-    image.src = "img/happyBun.jpg";
+    image.src = "img/traintoothless.jpg";
   }
 }
 
