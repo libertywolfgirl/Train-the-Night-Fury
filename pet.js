@@ -38,41 +38,52 @@ function clickedFeedButton() {
 
 function clickedPetButton() {
   if (gamePlaying) {
-    if (happiness)
-    // Increase pet happiness
-    happiness += 2;
-    console.log(happiness);
-    // Increase pet count
-    petCount += 1;
-    console.log(petCount);
-    // check if the game has ended
-    endGame();
+    if (happiness < 10) {
+      loseGame();
+    } else {
+      // Increase pet happiness
+      happiness += 2;
+      console.log(happiness);
+      // Increase pet count
+      petCount += 1;
+      console.log(petCount);
+      // check if the game has ended
+      endGame();
+    }
   }
 }
 
 function clickedPlayButton() {
   if (gamePlaying) {
-    // Increase pet happiness
-    happiness += 3;
-    console.log(happiness);
-    // Decrease pet weight
-    weight -= 1;
-    console.log(weight);
-    // check if the game has ended
-    endGame();
+    if (petCount < 3) {
+      loseGame();
+    } else {
+      // Increase pet happiness
+      happiness += 3;
+      console.log(happiness);
+      // Decrease pet weight
+      weight -= 1;
+      console.log(weight);
+      // check if the game has ended
+      endGame();
+    }
   }
 }
 
 function clickedFlyButton() {
   if (gamePlaying) {
-    // Increase pet happiness
-    happiness += 10;
-    console.log(happiness);
-    // Decrease pet weight
-    weight -= 2;
-    console.log(weight);
-    // check if the game has ended
-    endGame();
+    if (happiness < 51) {
+      loseGame();
+    } else {
+      // Increase pet happiness
+      happiness += 10;
+      console.log(happiness);
+      // Decrease pet weight
+      weight -= 2;
+      console.log(weight);
+      // check if the game has ended
+      endGame();
+    }
   }
 }
 
@@ -80,7 +91,7 @@ function clickedFlyButton() {
 function endGame() {
   if (petCount > 15 || happiness < 0 || weight < 0 || weight > 15) {
     loseGame();
-  } else if (happiness > 50) {
+  } else if (happiness > 100) {
     winGame();
   } else {
     image.src = "img/traintoothless.jpg";
