@@ -91,7 +91,7 @@ function clickedFlyButton() {
 function endGame() {
   if (petCount > 15 || happiness < 0 || weight < 0 || weight > 10) {
     loseGame();
-  } else if (happiness > 199) {
+  } else if (happiness > 222) {
     winGame();
   } else {
     image.src = "img/traintoothless.jpg";
