@@ -14,11 +14,11 @@ document
   .querySelector(".feed-button")
   .addEventListener("click", clickedFeedButton);
 document
-  .querySelector(".play-button")
-  .addEventListener("click", clickedPlayButton);
-document
   .querySelector(".pet-button")
   .addEventListener("click", clickedPetButton);
+document
+  .querySelector(".play-button")
+  .addEventListener("click", clickedPlayButton);
 document
   .querySelector(".fly-button")
   .addEventListener("click", clickedFlyButton);
@@ -31,6 +31,20 @@ function clickedFeedButton() {
     // Increase pet weight
     weight += 1;
     console.log(weight);
+    // check if the game has ended
+    endGame();
+  }
+}
+
+function clickedPetButton() {
+  if (gamePlaying) {
+    if (happiness)
+    // Increase pet happiness
+    happiness += 2;
+    console.log(happiness);
+    // Increase pet count
+    petCount += 1;
+    console.log(petCount);
     // check if the game has ended
     endGame();
   }
@@ -49,24 +63,14 @@ function clickedPlayButton() {
   }
 }
 
-function clickedPetButton() {
-  if (gamePlaying) {
-    // Increase pet happiness
-    happiness += 2;
-    console.log(happiness);
-    // Increase pet count
-    petCount += 1;
-    console.log(petCount);
-    // check if the game has ended
-    endGame();
-  }
-}
-
 function clickedFlyButton() {
   if (gamePlaying) {
-    // Decrease pet happiness
-    happiness -= 1;
+    // Increase pet happiness
+    happiness += 10;
     console.log(happiness);
+    // Decrease pet weight
+    weight -= 2;
+    console.log(weight);
     // check if the game has ended
     endGame();
   }
@@ -74,7 +78,7 @@ function clickedFlyButton() {
 
 // function to end the game
 function endGame() {
-  if (petCount > 15 || happiness < 0 || weight < 0 || weight > 20) {
+  if (petCount > 15 || happiness < 0 || weight < 0 || weight > 15) {
     loseGame();
   } else if (happiness > 50) {
     winGame();
@@ -86,7 +90,8 @@ function endGame() {
 // function to lose game
 function loseGame() {
   image.src = "img/angrytoothless.jpg";
-  document.querySelector("#status").textContent = "Sorry, you failed to train the Night Fury!";
+  document.querySelector("#status").textContent =
+    "Sorry, you failed to train the Night Fury!";
   gamePlaying = false;
 }
 
