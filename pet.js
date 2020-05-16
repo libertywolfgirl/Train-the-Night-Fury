@@ -75,7 +75,7 @@ function clickedTrainButton() {
 // create function to end the game
 function endGame() {
   if (petCount > 15 || happiness < 5 || weight < 5 || weight > 20) {
-    image.src = "img/grumpyBun.jpg";
+    image.src = "img/angrytoothless.jpg";
     document.querySelector("#status").textContent = "You failed!";
     gamePlaying = false;
   } else {
