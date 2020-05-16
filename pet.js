@@ -5,62 +5,55 @@ let happiness;
 let weight;
 let gamePlaying;
 const image = document.getElementById("nightFury");
-const petButton = document.querySelector("button");
 
 // initialize game
 init();
 
 // When each button is clicked, it will "call" function for that button (functions are below)
-  document.querySelector('.feed-button').click(clickedFeedButton);
-  document.querySelector('.play-button').click(clickedPlayButton);
-  document.querySelector('.pet-button').click(clickedPetButton);
-  document.querySelector('.train-button').click(clickedTrainButton);
+  document.querySelector('.feed-button').addEventListener('click', (clickedFeedButton));
+  document.querySelector('.play-button').addEventListener('click', (clickedPlayButton));
+  document.querySelector('.pet-button').addEventListener('click', (clickedPetButton));
+  document.querySelector('.train-button').addEventListener('click', (clickedTrainButton));
 
   function clickedFeedButton() {
-    // Increase pet happiness
-    happiness += 1;
-    console.log(happiness);
-    // Increase pet weight
-    weight += 1;
-    console.log(weight);
-    checkAndUpdatePetInfoInHtml();
+    if (gamePlaying) {
+      // Increase pet happiness
+      happiness += 1;
+      console.log(happiness);
+      // Increase pet weight
+      weight += 1;
+      console.log(weight);
+    }
   }
   
   function clickedPlayButton() {
-    // Increase pet happiness
-    happiness += 1;
-    console.log(happiness);
-    // Decrease pet weight
-    weight -= 1;
-    console.log(weight);
-    checkAndUpdatePetInfoInHtml();
+    if (gamePlaying) {
+       // Increase pet happiness
+      happiness += 1;
+      console.log(happiness);
+      // Decrease pet weight
+      weight -= 1;
+      console.log(weight);
+    }
   }
   
   function clickedPetButton() {
-    // Increase pet happiness
+   if (gamePlaying) {
+     // Increase pet happiness
     happiness += 1;
+    console.log(happiness);
     // Increase pet count
     petCount +=1;
     console.log(petCount);
-    checkAndUpdatePetInfoInHtml();
+   }
   }
 
   function clickedTrainButton() {
-    // Decrease pet happiness
+    if (gamePlaying) {
+      // Decrease pet happiness
     happiness -= 1;
     console.log(happiness);
-    checkAndUpdatePetInfoInHtml();
-  }
-
-  function checkAndUpdatePetInfoInHtml() {
-    checkWeightAndHappinessBeforeUpdating();  
-    updatePetInfoInHtml();
-  }
-  
-  function checkWeightAndHappinessBeforeUpdating() {
-    // Add conditional so if weight is lower than zero, set it back to zero
-    if (pet_info.weight < 1) pet_info.weight = 1;
-    if (pet_info.happiness < 1) pet_info.happiness = 0;
+    } 
   }
 
 // play the game
