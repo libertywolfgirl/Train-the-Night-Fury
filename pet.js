@@ -33,6 +33,9 @@ function clickedFeedButton() {
     console.log(weight);
     // check if the game has ended
     endGame();
+    if (weight === 10) {
+      growl();
+    }
   }
 }
 
@@ -49,6 +52,7 @@ function clickedPetButton() {
       console.log(petCount);
       // check if the game has ended
       endGame();
+      growl();
     }
   }
 }
@@ -66,6 +70,7 @@ function clickedPlayButton() {
       console.log(weight);
       // check if the game has ended
       endGame();
+      growl();
     }
   }
 }
@@ -83,8 +88,14 @@ function clickedFlyButton() {
       console.log(weight);
       // check if the game has ended
       endGame();
+      growl();
     }
   }
+}
+
+// function to warn of low scores
+function growl() {
+  alert('Grr...');
 }
 
 // function to end the game
