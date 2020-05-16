@@ -38,7 +38,7 @@ function clickedFeedButton() {
 
 function clickedPetButton() {
   if (gamePlaying) {
-    if (happiness < 10) {
+    if (happiness < 8) {
       loseGame();
     } else {
       // Increase pet happiness
@@ -55,7 +55,7 @@ function clickedPetButton() {
 
 function clickedPlayButton() {
   if (gamePlaying) {
-    if (petCount < 3) {
+    if (petCount < 5) {
       loseGame();
     } else {
       // Increase pet happiness
@@ -72,7 +72,7 @@ function clickedPlayButton() {
 
 function clickedFlyButton() {
   if (gamePlaying) {
-    if (happiness < 51) {
+    if (happiness < 75) {
       loseGame();
     } else {
       // Increase pet happiness
@@ -89,7 +89,7 @@ function clickedFlyButton() {
 
 // function to end the game
 function endGame() {
-  if (petCount > 15 || happiness < 0 || weight < 0 || weight > 15) {
+  if (petCount > 15 || happiness < 0 || weight < 0 || weight > 10) {
     loseGame();
   } else if (happiness > 100) {
     winGame();
