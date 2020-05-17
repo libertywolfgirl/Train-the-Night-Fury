@@ -3,6 +3,7 @@ console.log("pet script running");
 let petCount;
 let happiness;
 let weight;
+let growlCount;
 let gamePlaying;
 const image = document.getElementById("nightFury");
 
@@ -101,7 +102,12 @@ function clickedFlyButton() {
 
 // function to warn of low scores
 function growl() {
-  alert("Grr...");
+  if (growlCount === 3) {
+    loseGame();
+  } else {
+    alert("Grr...");
+    growlCount += 1;
+  }
 }
 
 // function to end the game
