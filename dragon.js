@@ -5,7 +5,8 @@ let happiness;
 let weight;
 let growlCount;
 let gamePlaying;
-let image = document.getElementById("nightFury");
+const image = document.getElementById("nightFury");
+const rules = document.querySelector("#status").innerHTML;
 
 // initialize game
 init();
@@ -151,6 +152,6 @@ function init() {
   weight = 0;
   growlCount = 0;
   image.src = "img/traintoothless.jpg";
-  document.querySelector("#status").textContent = 
+  document.querySelector("#status").innerHTML = rules;
   gamePlaying = true;
 }
