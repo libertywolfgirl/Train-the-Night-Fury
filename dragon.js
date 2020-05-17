@@ -1,4 +1,4 @@
-console.log("pet script running");
+console.log("dragon script running");
 // variables
 let petCount;
 let happiness;
