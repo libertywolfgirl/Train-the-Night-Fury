@@ -5,7 +5,7 @@ let happiness;
 let weight;
 let growlCount;
 let gamePlaying;
-const image = document.getElementById("nightFury");
+let image = document.getElementById("nightFury");
 
 // initialize game
 init();
@@ -23,6 +23,9 @@ document
 document
   .querySelector(".fly-button")
   .addEventListener("click", clickedFlyButton);
+document
+  .querySelector(".restart-button")
+  .addEventListener("click", clickedRestartButton);
 
 function clickedFeedButton() {
   if (gamePlaying) {
@@ -48,9 +51,6 @@ function clickedPetButton() {
       // Increase pet happiness
       happiness += 2;
       console.log(happiness);
-      // Decrease pet weight
-      weight -= 1;
-      console.log(weight);
       // Increase pet count
       petCount += 1;
       console.log(petCount);
@@ -103,6 +103,10 @@ function clickedFlyButton() {
   }
 }
 
+function clickedRestartButton() {
+  init();
+}
+
 // function to warn of low scores
 function growl() {
   if (growlCount === 3) {
@@ -146,5 +150,7 @@ function init() {
   happiness = 0;
   weight = 0;
   growlCount = 0;
+  image.src = "img/traintoothless.jpg";
+  document.querySelector("#status").textContent = 
   gamePlaying = true;
 }
