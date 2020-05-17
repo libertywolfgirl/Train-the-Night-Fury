@@ -30,11 +30,11 @@ function clickedFeedButton() {
     happiness += 1;
     console.log(happiness);
     // Increase pet weight
-    weight += 1;
+    weight += 2;
     console.log(weight);
     // check if the game has ended
     endGame();
-    if (weight === 15) {
+    if (weight === 20) {
       growl();
     }
   }
@@ -42,12 +42,15 @@ function clickedFeedButton() {
 
 function clickedPetButton() {
   if (gamePlaying) {
-    if (happiness < 8) {
+    if (happiness < 5) {
       loseGame();
     } else {
       // Increase pet happiness
       happiness += 2;
       console.log(happiness);
+      // Decrease pet weight
+      weight -= 1;
+      console.log(weight);
       // Increase pet count
       petCount += 1;
       console.log(petCount);
@@ -112,7 +115,7 @@ function growl() {
 
 // function to end the game
 function endGame() {
-  if (petCount > 15 || happiness < 0 || weight < 0 || weight > 15) {
+  if (petCount > 15 || happiness < 0 || weight < 0 || weight > 20) {
     loseGame();
   } else if (happiness > 222) {
     winGame();
@@ -141,7 +144,7 @@ function winGame() {
 function init() {
   petCount = 0;
   happiness = 0;
-  weight = 5;
+  weight = 0;
   growlCount = 0;
   gamePlaying = true;
 }
