@@ -34,7 +34,7 @@ function clickedFeedButton() {
     console.log(weight);
     // check if the game has ended
     endGame();
-    if (weight === 10) {
+    if (weight === 15) {
       growl();
     }
   }
@@ -112,7 +112,7 @@ function growl() {
 
 // function to end the game
 function endGame() {
-  if (petCount > 15 || happiness < 0 || weight < 0 || weight > 10) {
+  if (petCount > 15 || happiness < 0 || weight < 0 || weight > 15) {
     loseGame();
   } else if (happiness > 222) {
     winGame();
@@ -141,7 +141,7 @@ function winGame() {
 function init() {
   petCount = 0;
   happiness = 0;
-  weight = 0;
+  weight = 5;
   growlCount = 0;
   gamePlaying = true;
 }
