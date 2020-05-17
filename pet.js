@@ -142,5 +142,6 @@ function init() {
   petCount = 0;
   happiness = 0;
   weight = 0;
+  growlCount = 0;
   gamePlaying = true;
 }
