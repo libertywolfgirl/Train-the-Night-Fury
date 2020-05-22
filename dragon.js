@@ -34,13 +34,13 @@ function clickedFeedButton() {
     happiness += 1;
     console.log(happiness);
     // Increase pet weight
-    weight += 2;
+    weight += 1;
     console.log(weight);
     // Update info
-    updatePetInfoInHtml();
+    updateHtml();
     // check if the game has ended
     endGame();
-    if (weight === 20) {
+    if (weight === 60) {
       growl();
     }
   }
@@ -58,7 +58,7 @@ function clickedPetButton() {
       petCount += 1;
       console.log(petCount);
       // Update info
-      updatePetInfoInHtml();
+      updateHtml();
       // check if the game has ended
       endGame();
       if (petCount === 15) {
@@ -80,10 +80,10 @@ function clickedPlayButton() {
       weight -= 2;
       console.log(weight);
       // Update info
-      updatePetInfoInHtml();
+      updateHtml();
       // check if the game has ended
       endGame();
-      if (weight === 0) {
+      if (weight === 40) {
         growl();
       }
     }
@@ -102,10 +102,10 @@ function clickedFlyButton() {
       weight -= 3;
       console.log(weight);
       // Update info
-      updatePetInfoInHtml();
+      updateHtml();
       // check if the game has ended
       endGame();
-      if (weight === 0) {
+      if (weight === 40) {
         growl();
       }
     }
@@ -128,9 +128,9 @@ function growl() {
 
 // function to end the game
 function endGame() {
-  if (petCount > 15 || happiness < 0 || weight < 0 || weight > 20) {
+  if (petCount > 15 || happiness < 0 || weight < 40 || weight > 60) {
     loseGame();
-  } else if (happiness > 222) {
+  } else if (happiness === 200) {
     winGame();
   } else {
     image.src = "img/traintoothless.jpg";
@@ -154,18 +154,20 @@ function winGame() {
 }
 
 // Updates your HTML with the current values
-/*function updatePetInfoInHtml() {
+function updateHtml() {
   document.querySelector(".happiness").textContent = happiness;
   document.querySelector(".weight").textContent = weight;
-}*/
+}
 
 // function to initialize game
 function init() {
   petCount = 0;
   happiness = 0;
-  weight = 0;
+  weight = 50;
   growlCount = 0;
   image.src = "img/traintoothless.jpg";
   document.querySelector("#status").innerHTML = rules;
+  document.querySelector(".happiness").textContent = happiness;
+  document.querySelector(".weight").textContent = weight;
   gamePlaying = true;
 }
