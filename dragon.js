@@ -101,6 +101,8 @@ function clickedFlyButton() {
       // Decrease pet weight
       weight -= 3;
       console.log(weight);
+      // Update info
+      updatePetInfoInHtml();
       // check if the game has ended
       endGame();
       if (weight === 0) {
@@ -152,10 +154,10 @@ function winGame() {
 }
 
 // Updates your HTML with the current values
-function updatePetInfoInHtml() {
-  document.querySelector('.happiness').textContent = happiness;
-  document.querySelector('.weight').textContent = weight;
- }
+/*function updatePetInfoInHtml() {
+  document.querySelector(".happiness").textContent = happiness;
+  document.querySelector(".weight").textContent = weight;
+}*/
 
 // function to initialize game
 function init() {
