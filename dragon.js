@@ -145,6 +145,14 @@ function winGame() {
   gamePlaying = false;
 }
 
+// Updates your HTML with the current values in your pet_info object
+function updatePetInfoInHtml() {
+  $('.name').text(pet_info.name);
+  $('.weight').text(pet_info.weight);
+   $('.happiness').text(pet_info.happiness);
+ }
+})
+
 // function to initialize game
 function init() {
   petCount = 0;
