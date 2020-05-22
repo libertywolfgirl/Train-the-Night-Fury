@@ -36,6 +36,8 @@ function clickedFeedButton() {
     // Increase pet weight
     weight += 2;
     console.log(weight);
+    // Update info
+    updatePetInfoInHtml();
     // check if the game has ended
     endGame();
     if (weight === 20) {
@@ -55,6 +57,8 @@ function clickedPetButton() {
       // Increase pet count
       petCount += 1;
       console.log(petCount);
+      // Update info
+      updatePetInfoInHtml();
       // check if the game has ended
       endGame();
       if (petCount === 15) {
@@ -75,6 +79,8 @@ function clickedPlayButton() {
       // Decrease pet weight
       weight -= 2;
       console.log(weight);
+      // Update info
+      updatePetInfoInHtml();
       // check if the game has ended
       endGame();
       if (weight === 0) {
@@ -145,13 +151,11 @@ function winGame() {
   gamePlaying = false;
 }
 
-// Updates your HTML with the current values in your pet_info object
+// Updates your HTML with the current values
 function updatePetInfoInHtml() {
-  $('.name').text(pet_info.name);
-  $('.weight').text(pet_info.weight);
-   $('.happiness').text(pet_info.happiness);
+  document.querySelector('.happiness').textContent = happiness;
+  document.querySelector('.weight').textContent = weight;
  }
-})
 
 // function to initialize game
 function init() {
